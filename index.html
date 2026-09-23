@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Öffentliche Bücherei</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Öffentliche Bücherei</h1>
+    <div id="user-bar" class="hidden">
+      <span id="user-name"></span>
+      <button id="btn-logout">Abmelden</button>
+    </div>
+  </header>
+  <main>
+    <section id="login-view">
+      <h2>Anmelden</h2>
+      <p>
+        <label>E-Mail:
+          <input type="email" id="login-email" placeholder="email@example.com">
+        </label>
+      </p>
+      <p>
+        <label>Passwort:
+          <input type="password" id="login-password">
+        </label>
+      </p>
+      <p><button id="btn-login">Anmelden</button></p>
+      <p id="login-error" class="hidden" style="color:#b00000">E-Mail oder Passwort ungültig.</p>
+    </section>
+    <section id="customer-view" class="hidden">
+      <h2>Meine Bücherei</h2>
+      <label>Kunde:
+        <select id="customer-select"><option value="">-- wählen --</option></select>
+      </label>
+      <div id="customer-info"></div>
+      <h3>Ausgeliehene Bücher</h3>
+      <ul id="customer-borrowed"></ul>
+      <h3>Verfügbare Bücher</h3>
+      <ul id="customer-available"></ul>
+    </section>
+    <section id="employee-view" class="hidden">
+      <h2>Mitarbeiteransicht</h2>
+      <h3>Alle Ausleihen</h3>
+      <ul id="employee-borrowed"></ul>
+      <h3>Überfällige Bücher</h3>
+      <ul id="employee-overdue"></ul>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

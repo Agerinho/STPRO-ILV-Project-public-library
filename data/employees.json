@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Clara Schmidt",
+    "email": "clara@biblio.at",
+    "password": "clara123",
+    "phone": "+43 1 000111",
+    "address": "Wien 1030"
+  }
+]

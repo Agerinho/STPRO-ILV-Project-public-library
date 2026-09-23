@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "customerId": 1,
+    "bookId": 1,
+    "dueDate": "2026-10-15",
+    "fine": 0
+  },
+  {
+    "id": 2,
+    "customerId": 1,
+    "bookId": 2,
+    "dueDate": "2026-09-20",
+    "fine": 5.5
+  },
+  {
+    "id": 3,
+    "customerId": 2,
+    "bookId": 3,
+    "dueDate": "2026-11-01",
+    "fine": 0
+  }
+]
