@@ -39,7 +39,13 @@ BorrowedBooks:
 - CustomerID
 - BookID
 - DueDate
-- Fine
+
+## Algorithmen
+### Berechnung der Gebühr
+- Wenn das Buch nicht returniert wurde, startet die Gebühr bei 2€. Jede Woche erhöht sich die Gebühr um 20%.
+- Input ist die borrowedBooks.json Datei.
+- Output ist die berechnete Gebühr für jedes Buch.
+
 
 ## Setup
 

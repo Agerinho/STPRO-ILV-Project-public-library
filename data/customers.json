@@ -14,5 +14,69 @@
     "password": "ben123",
     "phone": "+43 1 7654321",
     "address": "Wien 1020"
+  },
+  {
+    "id": 3,
+    "name": "Sepp Hauser",
+    "email": "sepp@example.com",
+    "password": "sepp123",
+    "phone": "+43 664 1234567",
+    "address": "Wien 1140"
+  },
+  {
+    "id": 4,
+    "name": "Lisa Berger",
+    "email": "lisa@example.com",
+    "password": "lisa123",
+    "phone": "+43 1 2345678",
+    "address": "Wien 1030"
+  },
+  {
+    "id": 5,
+    "name": "Thomas Wagner",
+    "email": "thomas@example.com",
+    "password": "thomas123",
+    "phone": "+43 1 8765432",
+    "address": "Wien 1040"
+  },
+  {
+    "id": 6,
+    "name": "Julia Fischer",
+    "email": "julia@example.com",
+    "password": "julia123",
+    "phone": "+43 664 9876543",
+    "address": "Wien 1050"
+  },
+  {
+    "id": 7,
+    "name": "Markus Bauer",
+    "email": "markus@example.com",
+    "password": "markus123",
+    "phone": "+43 1 3456789",
+    "address": "Wien 1060"
+  },
+  {
+    "id": 8,
+    "name": "Sarah Keller",
+    "email": "sarah@example.com",
+    "password": "sarah123",
+    "phone": "+43 1 4567890",
+    "address": "Wien 1070"
+  },
+  {
+    "id": 9,
+    "name": "Daniel Maier",
+    "email": "daniel@example.com",
+    "password": "daniel123",
+    "phone": "+43 664 1112223",
+    "address": "Wien 1080"
+  },
+  {
+    "id": 10,
+    "name": "Laura Pichler",
+    "email": "laura@example.com",
+    "password": "laura123",
+    "phone": "+43 1 5678901",
+    "address": "Wien 1090"
   }
 ]

@@ -6,7 +6,7 @@
     "isbn": "978-3-446-19370-1",
     "publicationDate": "1988",
     "language": "Deutsch",
-    "price": 12.9
+    "image": "https://picsum.photos/seed/book1/150/220"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "isbn": "978-3-548-26703-3",
     "publicationDate": "1949",
     "language": "Deutsch",
-    "price": 9.9
+    "image": "https://picsum.photos/seed/book2/150/220"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "isbn": "978-3-550-74809-4",
     "publicationDate": "2011",
     "language": "Deutsch",
-    "price": 16.0
+    "image": "https://picsum.photos/seed/book3/150/220"
   },
   {
     "id": 4,
@@ -33,6 +33,240 @@
     "isbn": "978-3-15-009268-4",
     "publicationDate": "1943",
     "language": "Deutsch",
-    "price": 8.5
+    "image": "https://picsum.photos/seed/book4/150/220"
+  },
+  {
+    "id": 5,
+    "title": "Der Herr der Ringe",
+    "author": "J.R.R. Tolkien",
+    "isbn": "978-3-608-93814-5",
+    "publicationDate": "1954",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book5/150/220"
+  },
+  {
+    "id": 6,
+    "title": "Harry Potter und der Stein der Weisen",
+    "author": "J.K. Rowling",
+    "isbn": "978-3-551-55167-5",
+    "publicationDate": "1997",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book6/150/220"
+  },
+  {
+    "id": 7,
+    "title": "Die Verwandlung",
+    "author": "Franz Kafka",
+    "isbn": "978-3-518-38064-2",
+    "publicationDate": "1915",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book7/150/220"
+  },
+  {
+    "id": 8,
+    "title": "Krieg und Frieden",
+    "author": "Leo Tolstoi",
+    "isbn": "978-3-596-19044-5",
+    "publicationDate": "1869",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book8/150/220"
+  },
+  {
+    "id": 9,
+    "title": "Der große Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "isbn": "978-3-596-19546-4",
+    "publicationDate": "1925",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book9/150/220"
+  },
+  {
+    "id": 10,
+    "title": "Stolz und Vorurteil",
+    "author": "Jane Austen",
+    "isbn": "978-3-15-018216-2",
+    "publicationDate": "1813",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book10/150/220"
+  },
+  {
+    "id": 11,
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "isbn": "978-3-596-19444-8",
+    "publicationDate": "1851",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book11/150/220"
+  },
+  {
+    "id": 12,
+    "title": "Das Bildnis des Dorian Gray",
+    "author": "Oscar Wilde",
+    "isbn": "978-3-15-018200-1",
+    "publicationDate": "1890",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book12/150/220"
+  },
+  {
+    "id": 13,
+    "title": "Die Physiker",
+    "author": "Friedrich Dürrenmatt",
+    "isbn": "978-3-257-20086-3",
+    "publicationDate": "1962",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book13/150/220"
+  },
+  {
+    "id": 14,
+    "title": "Faust",
+    "author": "Johann Wolfgang von Goethe",
+    "isbn": "978-3-15-018211-7",
+    "publicationDate": "1808",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book14/150/220"
+  },
+  {
+    "id": 15,
+    "title": "Die Blechtrommel",
+    "author": "Günter Grass",
+    "isbn": "978-3-596-25434-1",
+    "publicationDate": "1959",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book15/150/220"
+  },
+  {
+    "id": 16,
+    "title": "Der Process",
+    "author": "Franz Kafka",
+    "isbn": "978-3-15-018203-2",
+    "publicationDate": "1925",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book16/150/220"
+  },
+  {
+    "id": 17,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "isbn": "978-3-596-19544-0",
+    "publicationDate": "1932",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book17/150/220"
+  },
+  {
+    "id": 18,
+    "title": "Der Fänger im Roggen",
+    "author": "J.D. Salinger",
+    "isbn": "978-3-596-19042-1",
+    "publicationDate": "1951",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book18/150/220"
+  },
+  {
+    "id": 19,
+    "title": "Das Parfum",
+    "author": "Patrick Süskind",
+    "isbn": "978-3-25-721215-7",
+    "publicationDate": "1985",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book19/150/220"
+  },
+  {
+    "id": 20,
+    "title": "Der Name der Rose",
+    "author": "Umberto Eco",
+    "isbn": "978-3-423-10324-2",
+    "publicationDate": "1980",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book20/150/220"
+  },
+  {
+    "id": 21,
+    "title": "Die unendliche Geschichte",
+    "author": "Michael Ende",
+    "isbn": "978-3-522-20260-0",
+    "publicationDate": "1979",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book21/150/220"
+  },
+  {
+    "id": 22,
+    "title": "Der Medicus",
+    "author": "Noah Gordon",
+    "isbn": "978-3-442-31234-1",
+    "publicationDate": "1986",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book22/150/220"
+  },
+  {
+    "id": 23,
+    "title": "Im Westen nichts Neues",
+    "author": "Erich Maria Remarque",
+    "isbn": "978-3-596-19040-7",
+    "publicationDate": "1929",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book23/150/220"
+  },
+  {
+    "id": 24,
+    "title": "Der Schatten des Windes",
+    "author": "Carlos Ruiz Zafón",
+    "isbn": "978-3-442-31012-5",
+    "publicationDate": "2001",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book24/150/220"
+  },
+  {
+    "id": 25,
+    "title": "Die Päpstin",
+    "author": "Donna Woolfolk Cross",
+    "isbn": "978-3-442-31254-9",
+    "publicationDate": "1996",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book25/150/220"
+  },
+  {
+    "id": 26,
+    "title": "Das Geheimnis der Hebamme",
+    "author": "Sabine Ebert",
+    "isbn": "978-3-442-31267-9",
+    "publicationDate": "2009",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book26/150/220"
+  },
+  {
+    "id": 27,
+    "title": "Der Buchdieb",
+    "author": "Markus Zusak",
+    "isbn": "978-3-550-08134-4",
+    "publicationDate": "2005",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book27/150/220"
+  },
+  {
+    "id": 28,
+    "title": "Die Tribute von Panem",
+    "author": "Suzanne Collins",
+    "isbn": "978-3-551-55422-5",
+    "publicationDate": "2008",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book28/150/220"
+  },
+  {
+    "id": 29,
+    "title": "Der Hobbit",
+    "author": "J.R.R. Tolkien",
+    "isbn": "978-3-608-93817-6",
+    "publicationDate": "1937",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book29/150/220"
+  },
+  {
+    "id": 30,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "isbn": "978-3-596-19548-8",
+    "publicationDate": "1953",
+    "language": "Deutsch",
+    "image": "https://picsum.photos/seed/book30/150/220"
   }
 ]

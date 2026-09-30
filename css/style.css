@@ -88,3 +88,43 @@ li {
 #login-view p {
   margin: 0.8rem 0;
 }
+
+nav button.active {
+  background: #004080;
+  color: #fff;
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.book-cover {
+  width: 80px;
+  height: auto;
+  border-radius: 0.3rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.btn-reserve,
+.btn-pickup,
+.btn-return {
+  margin-top: 0.5rem;
+}
+
+.account-summary {
+  background: #eef6ff;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+#employee-customer-account ul {
+  margin-top: 0.5rem;
+}
+
+#payment-amount {
+  width: 100px;
+}
