@@ -3,70 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Öffentliche Bücherei</title>
+  <title>Öffentliche Bücherei – Online Portal</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Öffentliche Bücherei</h1>
-    <div id="user-bar" class="hidden">
-      <span id="user-name"></span>
-      <button id="btn-logout">Abmelden</button>
+  <!-- Header mit Bücherei-Branding, Farbschema-Wähler und Benutzerstatus -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">📚</div>
+        <div class="brand-text">
+          <h1 class="brand-title">Öffentliche Bücherei</h1>
+          <span class="brand-subtitle">Stadt Wien • Online-Katalog & Ausleihe</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Live-Theme-Umschalter für die Präsentation & Farbwahl -->
+        <div class="theme-selector-wrap" title="Farbschema wechseln">
+          <label for="theme-select" class="theme-label" title="Farbschema">🎨</label>
+          <select id="theme-select" aria-label="Farbschema wählen">
+            <option value="warm-sage">Salbei & Honig (Warm)</option>
+            <option value="cozy-terracotta">Terracotta & Tintenblau (Gemütlich)</option>
+            <option value="nordic-blue">Nordisch Ozean & Gold (Frisch)</option>
+          </select>
+        </div>
+
+        <div id="user-bar" class="hidden">
+          <div class="user-pill">
+            <span class="user-avatar" aria-hidden="true">👤</span>
+            <span id="user-name"></span>
+          </div>
+          <button id="btn-logout" class="btn-logout">Abmelden</button>
+        </div>
+      </div>
     </div>
   </header>
+
   <main>
-    <section id="login-view">
-      <h2>Anmelden</h2>
-      <p>
-        <label>E-Mail:
-          <input type="email" id="login-email" placeholder="email@example.com" value="anna@example.com">
-        </label>
-      </p>
-      <p>
-        <label>Passwort:
-          <input type="password" id="login-password" value="anna123">
-        </label>
-      </p>
-      <p><button id="btn-login">Anmelden</button></p>
-      <p id="login-error" class="hidden" style="color:#b00000">E-Mail oder Passwort ungültig.</p>
+    <!-- 1. LOGIN-BEREICH -->
+    <section id="login-view" class="auth-section">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="auth-icon" aria-hidden="true">📖</div>
+          <h2>Willkommen in Ihrer Bücherei</h2>
+          <p class="auth-subtitle">Melden Sie sich an, um Ihre ausgeliehenen Bücher, Fristen und Gebühren einzusehen.</p>
+        </div>
+
+        <div class="auth-form">
+          <div class="form-group">
+            <label for="login-email">E-Mail-Adresse</label>
+            <input type="email" id="login-email" placeholder="email@example.com" value="anna@example.com" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Passwort</label>
+            <input type="password" id="login-password" value="anna123" autocomplete="current-password">
+          </div>
+
+          <button id="btn-login" class="btn-primary">Anmelden</button>
+          <div id="login-error" class="login-alert hidden" role="alert">
+            E-Mail oder Passwort ungültig.
+          </div>
+        </div>
+
+        <!-- Schnell-Login Hilfen für Test & Präsentation -->
+        <div class="demo-logins">
+          <span class="demo-title">Schnellzugang für Demo & Prüfung</span>
+          <div class="demo-buttons">
+            <button type="button" class="btn-demo" data-email="anna@example.com" data-pass="anna123">
+              <span>👤 Als Kundin einloggen (Anna Müller)</span>
+              <span>→</span>
+            </button>
+            <button type="button" class="btn-demo" data-email="clara@biblio.at" data-pass="clara123">
+              <span>💼 Als Mitarbeiterin einloggen (Clara Schmidt)</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="customer-view" class="hidden">
-      <h2>Meine Bücherei</h2>
+
+    <!-- 2. KUNDENANSICHT -->
+    <section id="customer-view" class="dashboard-section hidden">
+      <div class="view-header">
+        <h2>Meine Bücherei</h2>
+      </div>
+
+      <!-- Digitaler Bibliotheksausweis -->
       <div id="customer-info"></div>
-      <nav>
-        <button id="btn-customer-borrowed" class="active">Meine Bücher</button>
-        <button id="btn-customer-available">Verfügbare Bücher</button>
+
+      <!-- Navigation Tabs -->
+      <nav class="sub-nav">
+        <button id="btn-customer-borrowed" class="active">
+          <span>📚</span> Meine Bücher
+        </button>
+        <button id="btn-customer-available">
+          <span>🔍</span> Verfügbare Bücher
+        </button>
       </nav>
+
+      <!-- Panel: Meine Bücher (Ausgeliehen & Reserviert) -->
       <div id="customer-borrowed-panel">
-        <h3>Ausgeliehene Bücher</h3>
-        <ul id="customer-borrowed"></ul>
-        <h3>Reservierte Bücher</h3>
-        <ul id="customer-reserved"></ul>
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>Ausgeliehene Bücher</h3>
+            <span class="section-badge" id="badge-cust-borrowed">0</span>
+          </div>
+          <ul id="customer-borrowed" class="book-list"></ul>
+        </div>
+
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>Reservierte Bücher (Abholung)</h3>
+            <span class="section-badge" id="badge-cust-reserved">0</span>
+          </div>
+          <ul id="customer-reserved" class="book-list"></ul>
+        </div>
       </div>
+
+      <!-- Panel: Verfügbare Bücher (Katalog) -->
       <div id="customer-available-panel" class="hidden">
-        <h3>Verfügbare Bücher</h3>
-        <ul id="customer-available"></ul>
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>Verfügbare Bücher zum Ausleihen</h3>
+            <span class="section-badge" id="badge-cust-available">0</span>
+          </div>
+          <div class="filter-bar">
+            <input type="search" id="customer-search-input" placeholder="🔍 Bücher nach Titel oder Autor durchsuchen..." class="search-input">
+          </div>
+          <ul id="customer-available" class="book-grid"></ul>
+        </div>
       </div>
     </section>
-    <section id="employee-view" class="hidden">
-      <h2>Mitarbeiteransicht</h2>
-      <h3>Kundenkonto einsehen</h3>
-      <p>
-        <label>Kunde:
-          <select id="employee-customer-select"><option value="">-- wählen --</option></select>
-        </label>
-      </p>
-      <div id="employee-customer-account"></div>
-      <h3>Alle ausgeliehenen Bücher</h3>
-      <ul id="employee-borrowed"></ul>
-      <h3>Überfällige Bücher</h3>
-      <ul id="employee-overdue"></ul>
-      <h3>Verfügbare Bücher</h3>
-      <ul id="employee-available"></ul>
-      <h3>Reservierte Bücher</h3>
-      <ul id="employee-reserved"></ul>
+
+    <!-- 3. MITARBEITERANSICHT -->
+    <section id="employee-view" class="dashboard-section hidden">
+      <div class="view-header">
+        <h2>Mitarbeiteransicht</h2>
+      </div>
+
+      <!-- KPI Übersicht -->
+      <div class="employee-kpi-bar">
+        <div class="kpi-card">
+          <span class="kpi-icon" aria-hidden="true">📖</span>
+          <div class="kpi-info">
+            <span class="kpi-number" id="emp-stat-borrowed">0</span>
+            <span class="kpi-label">Ausgeliehen</span>
+          </div>
+        </div>
+        <div class="kpi-card kpi-card-danger">
+          <span class="kpi-icon" aria-hidden="true">⚠️</span>
+          <div class="kpi-info">
+            <span class="kpi-number" id="emp-stat-overdue">0</span>
+            <span class="kpi-label">Überfällig</span>
+          </div>
+        </div>
+        <div class="kpi-card kpi-card-warning">
+          <span class="kpi-icon" aria-hidden="true">📦</span>
+          <div class="kpi-info">
+            <span class="kpi-number" id="emp-stat-reserved">0</span>
+            <span class="kpi-label">Reserviert</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kundenkonto einsehen & Mahnwesen -->
+      <div class="employee-section-box">
+        <div class="section-title-bar">
+          <h3>Kundenkonto einsehen & Mahnwesen</h3>
+        </div>
+        <div class="select-row">
+          <label for="employee-customer-select">Kunde:</label>
+          <select id="employee-customer-select" class="select-field">
+            <option value="">-- Kundenkonto wählen --</option>
+          </select>
+        </div>
+        <div id="employee-customer-account"></div>
+      </div>
+
+      <!-- Listen der Mitarbeiteransicht -->
+      <div class="section-block">
+        <div class="section-title-bar">
+          <h3>⚠️ Überfällige Bücher</h3>
+          <span class="section-badge badge-danger" id="badge-emp-overdue">0</span>
+        </div>
+        <ul id="employee-overdue" class="book-list"></ul>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title-bar">
+          <h3>📦 Reservierte Bücher (Abholbereit)</h3>
+          <span class="section-badge badge-warning" id="badge-emp-reserved">0</span>
+        </div>
+        <ul id="employee-reserved" class="book-list"></ul>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title-bar">
+          <h3>📖 Alle ausgeliehenen Bücher</h3>
+          <span class="section-badge" id="badge-emp-borrowed">0</span>
+        </div>
+        <ul id="employee-borrowed" class="book-list"></ul>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title-bar">
+          <h3>📚 Verfügbare Bücher im Bestand</h3>
+          <span class="section-badge" id="badge-emp-available">0</span>
+        </div>
+        <ul id="employee-available" class="book-grid"></ul>
+      </div>
     </section>
   </main>
+
   <script src="js/app.js"></script>
 </body>
 </html>

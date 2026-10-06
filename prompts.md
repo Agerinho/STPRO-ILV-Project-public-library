@@ -56,3 +56,7 @@ der mitarbeiter kann in ein kundenkonto einsehen (zusammengezählt alle gebühre
 ## 13.) 30.09
 ## SWE-1.7 Lightning Medium (Cognition)
 speichere die daten in den localstorage, damit die daten (halbwegs) persistiert werden können
+
+## 14.) 06.10
+## Gemini 3.8 Flash
+help me improving the design of this project. there is no CI/CD available, so find a friendly colorset which applies to the users. the project is described in the readme.md
