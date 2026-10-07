@@ -6,7 +6,8 @@
     "isbn": "978-3-446-19370-1",
     "publicationDate": "1988",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book1/150/220"
+    "image": "https://picsum.photos/seed/book1/150/220",
+    "description": "Die zeitlose philosophische Erzählung über den andalusischen Hirtenjungen Santiago, der sich auf eine Reise nach Ägypten begibt, um seinen persönlichen Lebensplan zu verwirklichen."
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "isbn": "978-3-548-26703-3",
     "publicationDate": "1949",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book2/150/220"
+    "image": "https://picsum.photos/seed/book2/150/220",
+    "description": "George Orwells beklemmende Dystopie über einen totalitären Überwachungsstaat, den Großen Bruder und den mutigen Kampf des Einzelnen um Wahrheit und Gedankenfreiheit."
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "isbn": "978-3-550-74809-4",
     "publicationDate": "2011",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book3/150/220"
+    "image": "https://picsum.photos/seed/book3/150/220",
+    "description": "Eine mitreißende Reise durch die Geschichte der Menschheit – von den ersten Jägern und Sammlern bis hin zu den Revolutionen der Landwirtschaft, Wissenschaft und modernen Technologie."
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "isbn": "978-3-15-009268-4",
     "publicationDate": "1943",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book4/150/220"
+    "image": "https://picsum.photos/seed/book4/150/220",
+    "description": "Ein poetisches Märchen über Freundschaft, Liebe, Menschlichkeit und den Blick für das Wesentliche, das man nur mit dem Herzen gut sieht."
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "isbn": "978-3-608-93814-5",
     "publicationDate": "1954",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book5/150/220"
+    "image": "https://picsum.photos/seed/book5/150/220",
+    "description": "Das monumentale Fantasy-Epos um den Einen Ring, Hobbits, Elben, Zwerge und den epischen Kampf um das Schicksal von Mittelerde."
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "isbn": "978-3-551-55167-5",
     "publicationDate": "1997",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book6/150/220"
+    "image": "https://picsum.photos/seed/book6/150/220",
+    "description": "Der Beginn der magischen Saga um den Waisenjungen Harry Potter, der an seinem elften Geburtstag erfährt, dass er ein Zauberer ist und nach Hogwarts eingeladen wird."
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "isbn": "978-3-518-38064-2",
     "publicationDate": "1915",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book7/150/220"
+    "image": "https://picsum.photos/seed/book7/150/220",
+    "description": "Franz Kafkas meisterhafte Erzählung über Gregor Samsa, der eines Morgens als ungeheures Ungeziefer erwacht und mit der Entfremdung seiner Familie konfrontiert wird."
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "isbn": "978-3-596-19044-5",
     "publicationDate": "1869",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book8/150/220"
+    "image": "https://picsum.photos/seed/book8/150/220",
+    "description": "Leo Tolstois monumentales Meisterwerk über das Schicksal mehrerer russischer Adelsfamilien zur Zeit der Napoleonischen Kriege."
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "isbn": "978-3-596-19546-4",
     "publicationDate": "1925",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book9/150/220"
+    "image": "https://picsum.photos/seed/book9/150/220",
+    "description": "Das fesselnde Porträt der Goldenen Zwanziger Jahre in New York über den mysteriösen Millionär Jay Gatsby und seine unglückliche Liebe zu Daisy Buchanan."
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "isbn": "978-3-15-018216-2",
     "publicationDate": "1813",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book10/150/220"
+    "image": "https://picsum.photos/seed/book10/150/220",
+    "description": "Jane Austens geistreiche Gesellschaftskomödie über die scharfzüngige Elizabeth Bennet und den stolzen Mr. Darcy im ländlichen England des 19. Jahrhunderts."
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "isbn": "978-3-596-19444-8",
     "publicationDate": "1851",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book11/150/220"
+    "image": "https://picsum.photos/seed/book11/150/220",
+    "description": "Herman Melvilles packendes Seefahrer-Epos über Kapitän Ahabs obsessive Jagd nach dem sagenumwobenen weißen Wal Moby Dick."
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "isbn": "978-3-15-018200-1",
     "publicationDate": "1890",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book12/150/220"
+    "image": "https://picsum.photos/seed/book12/150/220",
+    "description": "Oscar Wildes düster-ästhetischer Roman über ewige Jugend, Verführung und ein Gemälde, das statt des Menschen altert und die Spuren seiner Sünden trägt."
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "isbn": "978-3-257-20086-3",
     "publicationDate": "1962",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book13/150/220"
+    "image": "https://picsum.photos/seed/book13/150/220",
+    "description": "Friedrich Dürrenmatts geniale Tragikomödie über drei Physiker in einem Sanatorium und die ethische Verantwortung der Wissenschaft im Atomzeitalter."
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "isbn": "978-3-15-018211-7",
     "publicationDate": "1808",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book14/150/220"
+    "image": "https://picsum.photos/seed/book14/150/220",
+    "description": "Goethes epochales Werk über den Gelehrten Heinrich Faust, der einen Pakt mit dem Teufel Mephisto schließt, um den Sinn des Lebens und vollkommenes Wissen zu erlangen."
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "isbn": "978-3-596-25434-1",
     "publicationDate": "1959",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book15/150/220"
+    "image": "https://picsum.photos/seed/book15/150/220",
+    "description": "Günter Grass virtuoser Schelmenroman über Oskar Matzerath, der mit drei Jahren beschließt, nicht mehr zu wachsen und mit seiner Trommel gegen den Wahnsinn des 20. Jahrhunderts protestiert."
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "isbn": "978-3-15-018203-2",
     "publicationDate": "1925",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book16/150/220"
+    "image": "https://picsum.photos/seed/book16/150/220",
+    "description": "Kafkas beklemmender Roman über Josef K., der ohne ersichtlichen Grund verhaftet wird und in die labyrinthartigen Mühlen einer unbegreiflichen Bürokratie gerät."
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "isbn": "978-3-596-19544-0",
     "publicationDate": "1932",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book17/150/220"
+    "image": "https://picsum.photos/seed/book17/150/220",
+    "description": "Aldous Huxleys visionäre Dystopie über eine scheinbar perfekte, technokratische Zukunftsgesellschaft ohne Schmerz, aber auch ohne echte Gefühle und Freiheit."
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "isbn": "978-3-596-19042-1",
     "publicationDate": "1951",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book18/150/220"
+    "image": "https://picsum.photos/seed/book18/150/220",
+    "description": "J.D. Salingers Kultroman über den jugendlichen Rebell Holden Caulfield und seine Orientierungssuche in den Straßen von New York."
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "isbn": "978-3-25-721215-7",
     "publicationDate": "1985",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book19/150/220"
+    "image": "https://picsum.photos/seed/book19/150/220",
+    "description": "Patrick Süskinds faszinierende und schaurige Geschichte über Jean-Baptiste Grenouille, einen genialen Geruchskünstler im Frankreich des 18. Jahrhunderts."
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "isbn": "978-3-423-10324-2",
     "publicationDate": "1980",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book20/150/220"
+    "image": "https://picsum.photos/seed/book20/150/220",
+    "description": "Umberto Ecos brillanter historischer Kriminalroman über den Franziskanermönch William von Baskerville, der in einer abgelegenen Benediktinerabtei mysteriöse Morde aufklärt."
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "isbn": "978-3-522-20260-0",
     "publicationDate": "1979",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book21/150/220"
+    "image": "https://picsum.photos/seed/book21/150/220",
+    "description": "Michael Endes fantasievolles Meisterwerk über Bastian Balthasar Bux und das vom Nichts bedrohte Land Phantásien."
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "isbn": "978-3-442-31234-1",
     "publicationDate": "1986",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book22/150/220"
+    "image": "https://picsum.photos/seed/book22/150/220",
+    "description": "Noah Gordons fesselnder historischer Roman über den jungen Engländer Rob Cole, der im 11. Jahrhundert nach Persien reist, um bei dem berühmten Arzt Avicenna Medizin zu lernen."
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "isbn": "978-3-596-19040-7",
     "publicationDate": "1929",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book23/150/220"
+    "image": "https://picsum.photos/seed/book23/150/220",
+    "description": "Erich Maria Remarques weltberühmter Antikriegsroman über das erschütternde Schicksal junger Soldaten an der Front des Ersten Weltkriegs."
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "isbn": "978-3-442-31012-5",
     "publicationDate": "2001",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book24/150/220"
+    "image": "https://picsum.photos/seed/book24/150/220",
+    "description": "Carlos Ruiz Zafóns atmosphärischer Bestseller über den Friedhof der Vergessenen Bücher im Barcelona des Jahres 1945 und ein geheimnisvolles Werk, das das Leben eines Jungen verändert."
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "isbn": "978-3-442-31254-9",
     "publicationDate": "1996",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book25/150/220"
+    "image": "https://picsum.photos/seed/book25/150/220",
+    "description": "Donna Woolfolk Cross spannender historischer Roman über Johanna von Ingelheim, die sich im 9. Jahrhundert als Mann verkleidet und bis auf den Papstthron aufsteigt."
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "isbn": "978-3-442-31267-9",
     "publicationDate": "2009",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book26/150/220"
+    "image": "https://picsum.photos/seed/book26/150/220",
+    "description": "Sabine Eberts packender historischer Roman über die junge Hebamme Marthe und die Besiedlung des Erzgebirges im Mittelalter."
   },
   {
     "id": 27,
@@ -240,7 +266,8 @@
     "isbn": "978-3-550-08134-4",
     "publicationDate": "2005",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book27/150/220"
+    "image": "https://picsum.photos/seed/book27/150/220",
+    "description": "Markus Zusaks berührender Roman, erzählt vom Tod, über das Mädchen Liesel Meminger, das während des Zweiten Weltkriegs in Deutschland die rettende Kraft von Büchern entdeckt."
   },
   {
     "id": 28,
@@ -249,7 +276,8 @@
     "isbn": "978-3-551-55422-5",
     "publicationDate": "2008",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book28/150/220"
+    "image": "https://picsum.photos/seed/book28/150/220",
+    "description": "Suzanne Collins weltbekannte Trilogie über Katniss Everdeen und ihren Überlebenskampf in den grausamen jährlichen Hungerspielen des Kapitols."
   },
   {
     "id": 29,
@@ -258,7 +286,8 @@
     "isbn": "978-3-608-93817-6",
     "publicationDate": "1937",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book29/150/220"
+    "image": "https://picsum.photos/seed/book29/150/220",
+    "description": "J.R.R. Tolkiens bezaubernde Vorgeschichte zu Der Herr der Ringe über den gemütlichen Hobbit Bilbo Beutlin, der mit dreizehn Zwergen zum Einsamen Berg aufbricht."
   },
   {
     "id": 30,
@@ -267,6 +296,7 @@
     "isbn": "978-3-596-19548-8",
     "publicationDate": "1953",
     "language": "Deutsch",
-    "image": "https://picsum.photos/seed/book30/150/220"
+    "image": "https://picsum.photos/seed/book30/150/220",
+    "description": "Ray Bradburys dystopischer Klassiker über eine Zukunft, in der Bücher verboten sind und Feuerwehrleute Brände legen, um Literatur zu vernichten."
   }
 ]

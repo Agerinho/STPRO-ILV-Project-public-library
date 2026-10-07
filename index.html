@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="nordic-blue">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +19,6 @@
       </div>
 
       <div class="header-actions">
-        <!-- Live-Theme-Umschalter für die Präsentation & Farbwahl -->
-        <div class="theme-selector-wrap" title="Farbschema wechseln">
-          <label for="theme-select" class="theme-label" title="Farbschema">🎨</label>
-          <select id="theme-select" aria-label="Farbschema wählen">
-            <option value="warm-sage">Salbei & Honig (Warm)</option>
-            <option value="cozy-terracotta">Terracotta & Tintenblau (Gemütlich)</option>
-            <option value="nordic-blue">Nordisch Ozean & Gold (Frisch)</option>
-          </select>
-        </div>
-
         <div id="user-bar" class="hidden">
           <div class="user-pill">
             <span class="user-avatar" aria-hidden="true">👤</span>
@@ -53,12 +43,12 @@
         <div class="auth-form">
           <div class="form-group">
             <label for="login-email">E-Mail-Adresse</label>
-            <input type="email" id="login-email" placeholder="email@example.com" value="anna@example.com" autocomplete="email">
+            <input type="email" id="login-email" placeholder="email@example.com" autocomplete="email">
           </div>
 
           <div class="form-group">
             <label for="login-password">Passwort</label>
-            <input type="password" id="login-password" value="anna123" autocomplete="current-password">
+            <input type="password" id="login-password" autocomplete="current-password">
           </div>
 
           <button id="btn-login" class="btn-primary">Anmelden</button>
@@ -143,79 +133,227 @@
         <h2>Mitarbeiteransicht</h2>
       </div>
 
-      <!-- KPI Übersicht -->
-      <div class="employee-kpi-bar">
-        <div class="kpi-card">
-          <span class="kpi-icon" aria-hidden="true">📖</span>
-          <div class="kpi-info">
-            <span class="kpi-number" id="emp-stat-borrowed">0</span>
-            <span class="kpi-label">Ausgeliehen</span>
+
+
+      <!-- Reiter-Navigation für Mitarbeiter -->
+      <nav class="sub-nav employee-nav" role="tablist">
+        <button id="btn-emp-tab-borrowed" class="active" role="tab" aria-selected="true">
+          <span>📖</span> Ausgeliehen <span class="tab-badge" id="badge-tab-emp-borrowed">0</span>
+        </button>
+        <button id="btn-emp-tab-overdue" role="tab" aria-selected="false">
+          <span>⚠️</span> Überfällig <span class="tab-badge tab-badge-danger" id="badge-tab-emp-overdue">0</span>
+        </button>
+        <button id="btn-emp-tab-reserved" role="tab" aria-selected="false">
+          <span>📦</span> Reserviert <span class="tab-badge tab-badge-warning" id="badge-tab-emp-reserved">0</span>
+        </button>
+        <button id="btn-emp-tab-available" role="tab" aria-selected="false">
+          <span>📚</span> Verfügbare Bücher <span class="tab-badge" id="badge-tab-emp-available">0</span>
+        </button>
+        <button id="btn-emp-tab-customers" role="tab" aria-selected="false">
+          <span>👥</span> Kunden & Details <span class="tab-badge" id="badge-tab-emp-customers">0</span>
+        </button>
+      </nav>
+
+      <!-- Reiter 1: Ausgeliehene Bücher -->
+      <div id="emp-panel-borrowed" class="employee-tab-panel">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>📖 Alle ausgeliehenen Bücher</h3>
+            <span class="section-badge" id="badge-emp-borrowed">0</span>
           </div>
-        </div>
-        <div class="kpi-card kpi-card-danger">
-          <span class="kpi-icon" aria-hidden="true">⚠️</span>
-          <div class="kpi-info">
-            <span class="kpi-number" id="emp-stat-overdue">0</span>
-            <span class="kpi-label">Überfällig</span>
+          <div class="filter-bar">
+            <input type="search" id="employee-search-borrowed" placeholder="🔍 Ausgeliehene Bücher nach Buch oder Kunde durchsuchen..." class="search-input">
           </div>
-        </div>
-        <div class="kpi-card kpi-card-warning">
-          <span class="kpi-icon" aria-hidden="true">📦</span>
-          <div class="kpi-info">
-            <span class="kpi-number" id="emp-stat-reserved">0</span>
-            <span class="kpi-label">Reserviert</span>
+          <div class="info-banner">
+            <span>ℹ️ <strong>Rücknahme-Bedingung:</strong> Bücher mit offenen Mahngebühren können erst zurückgenommen werden, wenn die Gebühr im Kundenkonto beglichen wurde.</span>
           </div>
+          <ul id="employee-borrowed" class="book-list"></ul>
         </div>
       </div>
 
-      <!-- Kundenkonto einsehen & Mahnwesen -->
-      <div class="employee-section-box">
-        <div class="section-title-bar">
-          <h3>Kundenkonto einsehen & Mahnwesen</h3>
+      <!-- Reiter 2: Überfällige Bücher -->
+      <div id="emp-panel-overdue" class="employee-tab-panel hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>⚠️ Überfällige Bücher & Mahnstatus</h3>
+            <span class="section-badge badge-danger" id="badge-emp-overdue">0</span>
+          </div>
+          <ul id="employee-overdue" class="book-list"></ul>
         </div>
-        <div class="select-row">
-          <label for="employee-customer-select">Kunde:</label>
-          <select id="employee-customer-select" class="select-field">
-            <option value="">-- Kundenkonto wählen --</option>
-          </select>
-        </div>
-        <div id="employee-customer-account"></div>
       </div>
 
-      <!-- Listen der Mitarbeiteransicht -->
-      <div class="section-block">
-        <div class="section-title-bar">
-          <h3>⚠️ Überfällige Bücher</h3>
-          <span class="section-badge badge-danger" id="badge-emp-overdue">0</span>
+      <!-- Reiter 3: Reservierte Bücher -->
+      <div id="emp-panel-reserved" class="employee-tab-panel hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>📦 Reservierte Bücher (Abholbereit)</h3>
+            <span class="section-badge badge-warning" id="badge-emp-reserved">0</span>
+          </div>
+          <ul id="employee-reserved" class="book-list"></ul>
         </div>
-        <ul id="employee-overdue" class="book-list"></ul>
       </div>
 
-      <div class="section-block">
-        <div class="section-title-bar">
-          <h3>📦 Reservierte Bücher (Abholbereit)</h3>
-          <span class="section-badge badge-warning" id="badge-emp-reserved">0</span>
+      <!-- Reiter 4: Eigene Seite für Verfügbare Bücher im Bestand (Mitarbeiter) -->
+      <div id="emp-panel-available" class="employee-tab-panel hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>📚 Verfügbare Bücher im Bestand</h3>
+            <div class="title-bar-actions">
+              <span class="section-badge" id="badge-emp-available">0</span>
+              <button id="btn-add-book" class="btn-primary btn-sm-action">➕ Neues Buch anlegen</button>
+            </div>
+          </div>
+          <div class="filter-bar">
+            <input type="search" id="employee-search-available" placeholder="🔍 Bücher im Bestand nach Titel, Autor oder ISBN filtern..." class="search-input">
+          </div>
+          <ul id="employee-available" class="book-grid"></ul>
         </div>
-        <ul id="employee-reserved" class="book-list"></ul>
       </div>
 
-      <div class="section-block">
-        <div class="section-title-bar">
-          <h3>📖 Alle ausgeliehenen Bücher</h3>
-          <span class="section-badge" id="badge-emp-borrowed">0</span>
+      <!-- Reiter 5: Eigene Seite für Kundenauswahl & Details (Mitarbeiter) -->
+      <div id="emp-panel-customers" class="employee-tab-panel hidden">
+        <div class="employee-section-box">
+          <div class="section-title-bar">
+            <h3>👥 Kundenverwaltung & Kundendetails</h3>
+            <span class="section-badge" id="badge-emp-customers">0</span>
+          </div>
+          <div class="customer-picker-wrap">
+            <div class="select-row customer-select-toolbar">
+              <label for="employee-customer-select">Kunde auswählen:</label>
+              <select id="employee-customer-select" class="select-field">
+                <option value="">-- Kundenkonto wählen --</option>
+              </select>
+            </div>
+            <div class="filter-bar">
+              <input type="search" id="employee-customer-search" placeholder="🔍 Kunden nach Name, E-Mail oder ID filtern..." class="search-input">
+            </div>
+          </div>
+          <div id="employee-customer-account"></div>
         </div>
-        <ul id="employee-borrowed" class="book-list"></ul>
-      </div>
-
-      <div class="section-block">
-        <div class="section-title-bar">
-          <h3>📚 Verfügbare Bücher im Bestand</h3>
-          <span class="section-badge" id="badge-emp-available">0</span>
-        </div>
-        <ul id="employee-available" class="book-grid"></ul>
       </div>
     </section>
   </main>
+
+  <!-- ========================================================================= -->
+  <!-- MODALE DIALOGE                                                            -->
+  <!-- ========================================================================= -->
+
+  <!-- DIALOG: Kundendaten bearbeiten (Mitarbeiter) -->
+  <dialog id="customer-dialog" class="app-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">👤</span>
+          <div>
+            <h3 id="customer-dialog-title">Kundendaten bearbeiten</h3>
+            <span class="dialog-subtitle" id="customer-dialog-subtitle">Bibliothekskonto</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="customer-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <form id="customer-edit-form" class="dialog-form">
+        <input type="hidden" id="cust-edit-id">
+        <div class="form-group">
+          <label for="cust-edit-name">Vollständiger Name *</label>
+          <input type="text" id="cust-edit-name" required placeholder="z.B. Anna Müller">
+        </div>
+        <div class="form-group">
+          <label for="cust-edit-email">E-Mail-Adresse *</label>
+          <input type="email" id="cust-edit-email" required placeholder="anna@example.com">
+        </div>
+        <div class="form-group">
+          <label for="cust-edit-phone">Telefonnummer</label>
+          <input type="tel" id="cust-edit-phone" placeholder="+43 1 1234567">
+        </div>
+        <div class="form-group">
+          <label for="cust-edit-address">Wohnadresse</label>
+          <input type="text" id="cust-edit-address" placeholder="Wien 1010">
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn-secondary" data-close="customer-dialog">Abbrechen</button>
+          <button type="submit" class="btn-primary">💾 Änderungen speichern</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: Buch anlegen & bearbeiten (Mitarbeiter) -->
+  <dialog id="book-form-dialog" class="app-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">📚</span>
+          <div>
+            <h3 id="book-form-dialog-title">Neues Buch anlegen</h3>
+            <span class="dialog-subtitle">Bestandsverwaltung der Bücherei</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="book-form-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <form id="book-edit-form" class="dialog-form">
+        <input type="hidden" id="book-form-id">
+        <div class="form-group">
+          <label for="book-form-title">Buchtitel *</label>
+          <input type="text" id="book-form-title" required placeholder="z.B. Der Alchimist">
+        </div>
+        <div class="form-group">
+          <label for="book-form-author">Autor / Autorin *</label>
+          <input type="text" id="book-form-author" required placeholder="z.B. Paulo Coelho">
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="book-form-isbn">ISBN</label>
+            <input type="text" id="book-form-isbn" placeholder="z.B. 978-3-446-19370-1">
+          </div>
+          <div class="form-group">
+            <label for="book-form-pubdate">Erscheinungsjahr</label>
+            <input type="text" id="book-form-pubdate" placeholder="z.B. 1988">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="book-form-language">Sprache</label>
+            <input type="text" id="book-form-language" value="Deutsch" placeholder="Deutsch">
+          </div>
+          <div class="form-group">
+            <label for="book-form-image">Cover-Bild URL</label>
+            <input type="url" id="book-form-image" placeholder="https://...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="book-form-desc">Kurzfassung & Beschreibung</label>
+          <textarea id="book-form-desc" rows="4" class="input-field" placeholder="Kurze Inhaltsangabe für den Bibliothekskatalog..."></textarea>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn-secondary" data-close="book-form-dialog">Abbrechen</button>
+          <button type="submit" class="btn-primary">💾 Buch speichern</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: Buch-Detailansicht (Kunden & Mitarbeiter) -->
+  <dialog id="book-detail-dialog" class="app-dialog modal-book-detail">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">📖</span>
+          <div>
+            <h3>Buchdetails & Zusammenfassung</h3>
+            <span class="dialog-subtitle">Bibliothekskatalog Stadt Wien</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="book-detail-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <div id="book-detail-body" class="book-detail-body">
+        <!-- Dynamischer Inhalt durch JS gerendert -->
+      </div>
+      <div class="dialog-actions" id="book-detail-actions">
+        <button type="button" class="btn-secondary" data-close="book-detail-dialog">Schließen</button>
+        <span id="book-detail-reserve-slot"></span>
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/app.js"></script>
 </body>

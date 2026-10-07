@@ -60,3 +60,18 @@ speichere die daten in den localstorage, damit die daten (halbwegs) persistiert 
 ## 14.) 06.10
 ## Gemini 3.8 Flash
 help me improving the design of this project. there is no CI/CD available, so find a friendly colorset which applies to the users. the project is described in the readme.md
+
+## 15.) 07.10
+## Gemini 3.8 Flash
+die ansicht für die mitarbeiter ist ziemlich lang. teile die einzelnen sections (ausgeliehene bücher, usw) besser auf. eventuell in reiter?,
+erstelle auch für mitarbeiter und kunden eine eigene seite für verfügbare bücher,
+ebenfalls sollen mitarbeiter nicht bücher zurücknehmen können die noch eine offene gebühr haben,
+
+## 16.) 07.10
+## Gemini 3.8 Flash
+füge/bearbeite folgende features hinzu:
+mitarbeiter sollten kundendaten bearbeiten können (in einem dialog),
+mitarbeiter sollten bücher bearbeiten, löschen und neue hinzufügen können,
+kunden sollen eine detailansicht von büchern sehen können (dialog). dort sollen sie mehrere details über das buch erhalten (kurzfassung, usw),
+in der mitarbeiteransicht sind nun 2 menüs für das durchnavigieren verfügbar, lösche daher das obere menü,
+behalte das Nordisch & Ozean theme, entferne die anderen themes und das select im header
