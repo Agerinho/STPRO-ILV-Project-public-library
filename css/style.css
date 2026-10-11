@@ -930,6 +930,7 @@ li.book-card-item {
 button.btn-reserve,
 button.btn-pickup,
 button.btn-return,
+button.btn-primary:not(#btn-login),
 .btn-secondary {
   border: none;
   font-size: 0.85rem;
@@ -942,6 +943,10 @@ button.btn-return,
   align-items: center;
   gap: 0.35rem;
   margin: 0;
+}
+
+button.btn-primary:not(#btn-login) {
+  width: auto;
 }
 
 /* Reservieren: Warmer Akzent */
@@ -1090,6 +1095,7 @@ button.btn-return:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .section-subtitle {
@@ -1449,6 +1455,20 @@ dialog.app-dialog::backdrop {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.radio-option input[type="radio"] {
+  width: auto;
+  accent-color: var(--primary);
 }
 
 .dialog-actions {

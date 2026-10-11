@@ -69,6 +69,10 @@
               <span>💼 Als Mitarbeiterin einloggen (Clara Schmidt)</span>
               <span>→</span>
             </button>
+            <button type="button" id="btn-reset-data" class="btn-demo">
+              <span>🔄 Daten zurücksetzen (Start mit JSON-Datensatz)</span>
+              <span>→</span>
+            </button>
           </div>
         </div>
       </div>
@@ -89,7 +93,10 @@
           <span>📚</span> Meine Bücher
         </button>
         <button id="btn-customer-available">
-          <span>🔍</span> Verfügbare Bücher
+          <span>🔍</span> Bücherkatalog
+        </button>
+        <button id="btn-customer-fees">
+          <span>💶</span> Mahngebühren <span class="tab-badge tab-badge-danger" id="badge-tab-cust-fees">0</span>
         </button>
       </nav>
 
@@ -100,24 +107,56 @@
             <h3>Ausgeliehene Bücher</h3>
             <span class="section-badge" id="badge-cust-borrowed">0</span>
           </div>
+          <div class="filter-bar">
+            <label for="customer-borrowed-sort" class="sort-label">Sortieren nach:</label>
+            <select id="customer-borrowed-sort" class="select-field">
+              <option value="status">Status (überfällig zuerst)</option>
+              <option value="dueDate">Rückgabedatum</option>
+              <option value="borrowDate">Ausleihdatum</option>
+              <option value="title">Buchtitel (A–Z)</option>
+            </select>
+          </div>
           <ul id="customer-borrowed" class="book-list"></ul>
         </div>
 
         <div class="section-block">
           <div class="section-title-bar">
-            <h3>Reservierte Bücher (Abholung)</h3>
+            <h3>Reservierte Bücher (Abholung & Warteliste)</h3>
             <span class="section-badge" id="badge-cust-reserved">0</span>
           </div>
           <ul id="customer-reserved" class="book-list"></ul>
         </div>
+
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>Rückgabehistorie</h3>
+            <span class="section-badge" id="badge-cust-history">0</span>
+          </div>
+          <ul id="customer-history" class="book-list"></ul>
+        </div>
       </div>
 
-      <!-- Panel: Verfügbare Bücher (Katalog) -->
+      <!-- Panel: Mahngebühren (Übersicht offener Posten) -->
+      <div id="customer-fees-panel" class="hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>Meine Mahngebühren</h3>
+            <span class="section-badge" id="badge-cust-fees">0</span>
+          </div>
+          <div id="customer-fees-summary"></div>
+          <ul id="customer-fees" class="book-list"></ul>
+        </div>
+      </div>
+
+      <!-- Panel: Bücherkatalog (alle Bücher inkl. nicht verfügbarer) -->
       <div id="customer-available-panel" class="hidden">
         <div class="section-block">
           <div class="section-title-bar">
-            <h3>Verfügbare Bücher zum Ausleihen</h3>
+            <h3>Bücherkatalog – gesamter Bestand</h3>
             <span class="section-badge" id="badge-cust-available">0</span>
+          </div>
+          <div class="info-banner">
+            <span>ℹ️ Hier sehen Sie alle Bücher im Bestand – auch aktuell nicht verfügbare. Für nicht verfügbare Bücher können Sie sich auf die Warteliste vormerken lassen.</span>
           </div>
           <div class="filter-bar">
             <input type="search" id="customer-search-input" placeholder="🔍 Bücher nach Titel oder Autor durchsuchen..." class="search-input">
@@ -140,14 +179,17 @@
         <button id="btn-emp-tab-borrowed" class="active" role="tab" aria-selected="true">
           <span>📖</span> Ausgeliehen <span class="tab-badge" id="badge-tab-emp-borrowed">0</span>
         </button>
-        <button id="btn-emp-tab-overdue" role="tab" aria-selected="false">
-          <span>⚠️</span> Überfällig <span class="tab-badge tab-badge-danger" id="badge-tab-emp-overdue">0</span>
-        </button>
         <button id="btn-emp-tab-reserved" role="tab" aria-selected="false">
           <span>📦</span> Reserviert <span class="tab-badge tab-badge-warning" id="badge-tab-emp-reserved">0</span>
         </button>
         <button id="btn-emp-tab-available" role="tab" aria-selected="false">
           <span>📚</span> Verfügbare Bücher <span class="tab-badge" id="badge-tab-emp-available">0</span>
+        </button>
+        <button id="btn-emp-tab-mahnwesen" role="tab" aria-selected="false">
+          <span>💳</span> Mahnwesen <span class="tab-badge tab-badge-danger" id="badge-tab-emp-mahnwesen">0</span>
+        </button>
+        <button id="btn-emp-tab-extensions" role="tab" aria-selected="false">
+          <span>⏳</span> Verlängerungen <span class="tab-badge tab-badge-warning" id="badge-tab-emp-extensions">0</span>
         </button>
         <button id="btn-emp-tab-customers" role="tab" aria-selected="false">
           <span>👥</span> Kunden & Details <span class="tab-badge" id="badge-tab-emp-customers">0</span>
@@ -171,17 +213,6 @@
         </div>
       </div>
 
-      <!-- Reiter 2: Überfällige Bücher -->
-      <div id="emp-panel-overdue" class="employee-tab-panel hidden">
-        <div class="section-block">
-          <div class="section-title-bar">
-            <h3>⚠️ Überfällige Bücher & Mahnstatus</h3>
-            <span class="section-badge badge-danger" id="badge-emp-overdue">0</span>
-          </div>
-          <ul id="employee-overdue" class="book-list"></ul>
-        </div>
-      </div>
-
       <!-- Reiter 3: Reservierte Bücher -->
       <div id="emp-panel-reserved" class="employee-tab-panel hidden">
         <div class="section-block">
@@ -190,6 +221,16 @@
             <span class="section-badge badge-warning" id="badge-emp-reserved">0</span>
           </div>
           <ul id="employee-reserved" class="book-list"></ul>
+        </div>
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>⏳ Vorgemerkt – noch nicht abholbereit (Warteliste)</h3>
+            <span class="section-badge badge-warning" id="badge-emp-waitlist">0</span>
+          </div>
+          <div class="info-banner">
+            <span>ℹ️ Diese Bücher sind aktuell an eine andere Person verliehen. Sobald sie zurückgegeben werden, rückt die nächste Person automatisch nach und das Buch erscheint oben unter "Abholbereit".</span>
+          </div>
+          <ul id="employee-waitlist" class="book-list"></ul>
         </div>
       </div>
 
@@ -210,7 +251,48 @@
         </div>
       </div>
 
-      <!-- Reiter 5: Eigene Seite für Kundenauswahl & Details (Mitarbeiter) -->
+      <!-- Reiter 5: Mahnwesen (überfällige Bücher & Zahlungen) -->
+      <div id="emp-panel-mahnwesen" class="employee-tab-panel hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>💳 Mahnwesen</h3>
+          </div>
+          <div class="info-banner">
+            <span>ℹ️ Offene Mahngebühren können nur noch vollständig je Buch oder gesammelt für den gesamten Kunden beglichen werden.</span>
+          </div>
+          <nav class="sub-nav mahnwesen-sub-nav" role="tablist">
+            <button id="btn-mahnwesen-tab-overdue" class="active" role="tab" aria-selected="true">
+              <span>⚠️</span> Überfällige Bücher <span class="tab-badge tab-badge-danger" id="badge-emp-mahnwesen-overdue">0</span>
+            </button>
+            <button id="btn-mahnwesen-tab-customers" role="tab" aria-selected="false">
+              <span>👥</span> Kunden mit offenen Gebühren <span class="tab-badge tab-badge-danger" id="badge-emp-mahnwesen-customers">0</span>
+            </button>
+          </nav>
+
+          <div id="mahnwesen-panel-overdue">
+            <ul id="mahnwesen-overdue" class="book-list"></ul>
+          </div>
+          <div id="mahnwesen-panel-customers" class="hidden">
+            <ul id="mahnwesen-customers" class="book-grid"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reiter 6: Fristverlängerungs-Anfragen (Mitarbeiter) -->
+      <div id="emp-panel-extensions" class="employee-tab-panel hidden">
+        <div class="section-block">
+          <div class="section-title-bar">
+            <h3>⏳ Anfragen auf Fristverlängerung</h3>
+            <span class="section-badge badge-warning" id="badge-emp-extensions">0</span>
+          </div>
+          <div class="info-banner">
+            <span>ℹ️ Kunden können je Ausleihe eine einmalige Verlängerung um 14 oder 28 Tage beantragen. Sie können die Anfrage annehmen oder ablehnen.</span>
+          </div>
+          <ul id="employee-extensions" class="book-list"></ul>
+        </div>
+      </div>
+
+      <!-- Reiter 7: Eigene Seite für Kundenauswahl & Details (Mitarbeiter) -->
       <div id="emp-panel-customers" class="employee-tab-panel hidden">
         <div class="employee-section-box">
           <div class="section-title-bar">
@@ -351,6 +433,84 @@
       <div class="dialog-actions" id="book-detail-actions">
         <button type="button" class="btn-secondary" data-close="book-detail-dialog">Schließen</button>
         <span id="book-detail-reserve-slot"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: Mahnwesen – Details & Zahlung für ein einzelnes Buch (Mitarbeiter) -->
+  <dialog id="mahnwesen-book-dialog" class="app-dialog modal-book-detail">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">💳</span>
+          <div>
+            <h3>Mahnwesen – Buchdetails & Zahlung</h3>
+            <span class="dialog-subtitle">Offene Gebühr für eine einzelne Ausleihe begleichen</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="mahnwesen-book-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <div id="mahnwesen-book-dialog-body" class="book-detail-body">
+        <!-- Dynamischer Inhalt durch JS gerendert -->
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn-secondary" data-close="mahnwesen-book-dialog">Schließen</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: Mahnwesen – Details & Zahlung für einen Kunden (Mitarbeiter) -->
+  <dialog id="mahnwesen-customer-dialog" class="app-dialog modal-book-detail">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">👥</span>
+          <div>
+            <h3>Mahnwesen – Kundendetails & Zahlung</h3>
+            <span class="dialog-subtitle">Überfällige Bücher & offene Gebühren des Kunden</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="mahnwesen-customer-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <div id="mahnwesen-customer-dialog-body" class="book-detail-body">
+        <!-- Dynamischer Inhalt durch JS gerendert -->
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn-secondary" data-close="mahnwesen-customer-dialog">Schließen</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: Fristverlängerung (Kunden-Anfrage oder direkte Mitarbeiter-Verlängerung) -->
+  <dialog id="extend-request-dialog" class="app-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="dialog-icon" aria-hidden="true">⏳</span>
+          <div>
+            <h3 id="extend-request-title">Fristverlängerung beantragen</h3>
+            <span class="dialog-subtitle" id="extend-request-subtitle">Die Mitarbeiter müssen Ihre Anfrage noch bestätigen</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-dialog" data-close="extend-request-dialog" aria-label="Schließen">✕</button>
+      </div>
+      <div class="dialog-form">
+        <input type="hidden" id="extend-request-borrowid">
+        <input type="hidden" id="extend-request-mode" value="request">
+        <div class="form-group">
+          <label class="radio-option">
+            <input type="radio" name="extend-days" value="14" checked>
+            <span>+ 14 Tage</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="extend-days" value="28">
+            <span>+ 28 Tage</span>
+          </label>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn-secondary" data-close="extend-request-dialog">Abbrechen</button>
+          <button type="button" class="btn-primary btn-confirm-extension">⏳ Verlängerung beantragen</button>
+        </div>
       </div>
     </div>
   </dialog>

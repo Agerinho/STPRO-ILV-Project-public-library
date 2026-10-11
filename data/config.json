@@ -1,0 +1,8 @@
+{
+  "loanPeriodDays": 14,
+  "fine": {
+    "initialAmount": 2,
+    "weeklyIncrease": 0.2,
+    "maximumAmount": 20
+  }
+}
