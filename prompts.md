@@ -87,3 +87,22 @@ add/update following features:
 - fix status badges in book details dialog as they are misleading and not showing correct data (remove the "Von Ihnen")
 - check button styles. they should be consistent in the list and in the dialog elements.
 - add a section for the customers to inspect their open payments as they need to have a better overview for the dunning.
+
+## 17.) 11.10
+## Clode Sonnet 5 Medium
+Loan, fine and extension logic (summarized; this session came before the prompts in 16.):
+- refactor borrowedBooks: replace `hasExtended` with an extension history. new structure: `borrowDate`, `originalDueDate` (immutable), `dueDate` (current), `returnedAt` (null while borrowed), `extensions` (list of `{date, days}`), `fine` (null while borrowed, final value after return). no stored `status`, it is derived via `getLoanStatus(loan)`
+- add central `config.json` (`loanPeriodDays: 14`, `fine: {initialAmount: 2, weeklyIncrease: 0.2, maximumAmount: 20}`), no hardcoded values elsewhere
+- fine = min(2 * 1.2^(week - 1), 20), only for overdue books, central function `calculateFine(dueDate, date)`. the current fine of active loans is calculated dynamically and never stored in localStorage; on return `returnedAt` is set and the final fine is stored in `fine`
+- extensions are documented in `extensions`; only `dueDate` changes, `originalDueDate` stays. customers cannot extend overdue loans, employees can (courtesy extension). already incurred fines must not get lost on a courtesy extension. central functions e.g. `canExtendLoan`, `extendLoan`, `returnBook`
+- migrate old localStorage data (with `hasExtended`) without crashing; adapt UI for customers (due date, status, current fine, extension info) and employees (create loan, return, extend, courtesy extend), show returned loans with return date and final fine
+- finally summarize changed/new files, data structures, functions, fine calculation, extension and overdue handling, migration
+
+Follow-ups:
+- update the data structure section in the README
+- refactor the json files to the new data structures if not already done; add a button to the demo section on the login page that resets localStorage and starts again with the dataset from the json files
+- no status badges in the footer of the book detail dialog, only buttons
+
+## 18.) 11.10
+## Clode Sonnet 5 Medium
+update the workflow for employees for reservated books. if a book got reserved by a customer, check first if the book is available and not currently booked by another customer. because, right now the employee can mark a reserved book as picked up, but the book is currently loaned by another user
