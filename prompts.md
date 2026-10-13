@@ -106,3 +106,12 @@ Follow-ups:
 ## 18.) 11.10
 ## Clode Sonnet 5 Medium
 update the workflow for employees for reservated books. if a book got reserved by a customer, check first if the book is available and not currently booked by another customer. because, right now the employee can mark a reserved book as picked up, but the book is currently loaned by another user
+
+
+## 19.) 13.10
+## Claude Sonnet 5.5 Medium
+for the employees: fix the detail view in the dunning section (Mahnwesen) for customers in the tab "Kunden mit offenen Gebühren" on larger screen sizes. the layout is horizontal and sticks out of the dialog. also the button "Details & Zahlung" in this list view inside the card should not be 100% wide. also add spacing between the tab menu "Überfällige Bücher" / "Kunden mit offenen Gebühren" and the respective list
+
+Follow-ups:
+- make the "Details & Zahlung" button not 100% wide, only as wide as its text
+- if I am logged in as a customer and have a book with a fine that is already paid, "Meine Bücher" > "Ausgeliehene Bücher" still shows "Offene Kosten: X". consider the payment status there

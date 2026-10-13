@@ -797,6 +797,7 @@ function renderCustomerBorrowed() {
     const status = getLoanStatus(bb);
     const overdue = status === 'overdue';
     const fine = getCurrentFine(bb);
+    const openFine = getBookOpenFine(bb);
     const pendingExtension = extensionRequests.find(r => r.borrowId === bb.id && r.status === 'pending');
 
     let extensionBadge = '';
@@ -826,9 +827,11 @@ function renderCustomerBorrowed() {
             <span class="badge ${overdue ? 'badge-danger' : 'badge-info'}">
               📅 Rückgabe bis: ${formatDate(bb.dueDate)} ${overdue ? '(Überfällig!)' : ''}
             </span>
-            ${fine > 0 
-              ? `<span class="badge badge-danger">⚠️ Offene Kosten: € ${fine.toFixed(2)}</span>` 
-              : `<span class="badge badge-success">✓ Fristgerecht</span>`}
+            ${openFine > 0 
+              ? `<span class="badge badge-danger">⚠️ Offene Kosten: € ${openFine.toFixed(2)}</span>` 
+              : fine > 0
+                ? `<span class="badge badge-success">✓ Gebühr beglichen (€ ${fine.toFixed(2)})</span>`
+                : `<span class="badge badge-success">✓ Fristgerecht</span>`}
             ${extensionBadge}
           </div>
           <div class="book-footer">

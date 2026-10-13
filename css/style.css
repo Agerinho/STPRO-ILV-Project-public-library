@@ -1496,6 +1496,25 @@ dialog.modal-book-detail {
   align-items: flex-start;
 }
 
+#mahnwesen-customer-dialog-body {
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+#mahnwesen-customer-dialog-body > * {
+  min-width: 0;
+}
+
+nav.mahnwesen-sub-nav {
+  margin-bottom: 1.5rem;
+}
+
+.customer-card .btn-mahnwesen-customer-details {
+  width: auto;
+  align-self: flex-start;
+}
+
 .book-detail-cover-wrap {
   width: 140px;
   min-width: 140px;
